@@ -1,6 +1,7 @@
+
 {
   "name": "structure-app",
-  "homepage": "https://danisshai.github.io/openai-learn/front-data-structure/structure-app/build",
+  "homepage": "https://danisshai.github.io/openai-learn/front-data-structure/structure-app/build", 
   "version": "0.1.0",
   "private": true,
   "dependencies": {

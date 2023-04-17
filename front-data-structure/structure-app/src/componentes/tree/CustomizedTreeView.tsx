@@ -168,20 +168,21 @@ const StyledTreeItem = styled((props: TreeItemProps) => (
 const  TreeItemRecursive = (props) => {
   
   return(
-  <StyledTreeItem  nodeId={props?.nombre_corto} 
+  <StyledTreeItem  nodeId={props?.id} 
     label=<CustomizedTreeRow 
         nombre_corto={props.nombre_corto} 
         marcar_como_columna={props.marcar_como_columna} 
         cantidad_subdivisiones={props.cantidad_subdivisiones}
         nombre_columna={props?.nombre_columna}
         isCat ={props?.is_cat}
+        id={props.id}
         preview ={props?.preview}
         nombre_antiguo={props.nombre}
         setPopupClose={props.setPopupClose} setPopupData={props.setPopupData}
     /> 
     >
   {props?.subdivisiones ? props?.subdivisiones.map((item, index) => (
-    <TreeItemRecursive key={index} {...item}
+    <TreeItemRecursive key={item.id} {...item}
     setPopupClose={props.setPopupClose} setPopupData={props.setPopupData}
     ></TreeItemRecursive>
   )): null}
@@ -196,11 +197,11 @@ export default function CustomizedTreeView(props) {
       defaultCollapseIcon={<MinusSquare />}
       defaultExpandIcon={<PlusSquare />}
       defaultEndIcon={<CloseSquare />}
-      sx={{ height: "100vh", flexGrow: 1, maxWidth: "90%", overflowY: 'auto'}}
+      sx={{ height: "100vh", flexGrow: 1, maxWidth: "99%", overflowY: 'auto'}}
     >
       {props?.data.map((item, index) => (
 
-        <TreeItemRecursive key={index} {...item} setPopupClose={props.setPopupClose} setPopupData={props.setPopupData}></TreeItemRecursive>
+        <TreeItemRecursive key={item.id} {...item} setPopupClose={props.setPopupClose} setPopupData={props.setPopupData}></TreeItemRecursive>
 
       ))}
 {/*       

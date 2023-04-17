@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/openai-learn/front-data-structure/structure-app/build/static/css/main.a5659154.css",
-    "main.js": "/openai-learn/front-data-structure/structure-app/build/static/js/main.e8dd0800.js",
+    "main.js": "/openai-learn/front-data-structure/structure-app/build/static/js/main.5665fd48.js",
     "static/js/787.dd5b06e7.chunk.js": "/openai-learn/front-data-structure/structure-app/build/static/js/787.dd5b06e7.chunk.js",
     "static/media/roboto-all-500-normal.woff": "/openai-learn/front-data-structure/structure-app/build/static/media/roboto-all-500-normal.0ab669b7a0d19b178f57.woff",
     "static/media/roboto-all-700-normal.woff": "/openai-learn/front-data-structure/structure-app/build/static/media/roboto-all-700-normal.a457fde362a540fcadff.woff",
@@ -38,11 +38,11 @@
     "static/media/roboto-greek-ext-700-normal.woff2": "/openai-learn/front-data-structure/structure-app/build/static/media/roboto-greek-ext-700-normal.bd9854c751441ccc1a70.woff2",
     "index.html": "/openai-learn/front-data-structure/structure-app/build/index.html",
     "main.a5659154.css.map": "/openai-learn/front-data-structure/structure-app/build/static/css/main.a5659154.css.map",
-    "main.e8dd0800.js.map": "/openai-learn/front-data-structure/structure-app/build/static/js/main.e8dd0800.js.map",
+    "main.5665fd48.js.map": "/openai-learn/front-data-structure/structure-app/build/static/js/main.5665fd48.js.map",
     "787.dd5b06e7.chunk.js.map": "/openai-learn/front-data-structure/structure-app/build/static/js/787.dd5b06e7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a5659154.css",
-    "static/js/main.e8dd0800.js"
+    "static/js/main.5665fd48.js"
   ]
 }

@@ -20,7 +20,7 @@ export default function CustomizedTreeRow(props) {
             // setPopupClose={props.setPopupClose} setPopupData={props.setPopupData}
           }
         }
-        > {props.nombre_corto}</div>
+        > {!props?.isCat ?props.id+".": null} {props.nombre_corto}</div>
         
             {/* <div style={styles.textRight}>40 vec.</div>
             <div style={styles.textRight}>4 categ.</div>
