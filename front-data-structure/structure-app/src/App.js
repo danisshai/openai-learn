@@ -26,7 +26,7 @@ function App() {
     // si fetchAlways = true siempre descarga los datos
     const fetchAlways = true
     if (fetchAlways) {
-      fetch('openai-learn/data.jso')
+      fetch('data.json')
       .then(response => response.json())
       .then(jsonData => {
         setData(jsonData);
@@ -40,7 +40,7 @@ function App() {
       if (myDataCatch) {
         setData(JSON.parse(myDataCatch));
       }else{
-        fetch('openai-learn/data.json')
+        fetch('data.json')
       .then(response => response.json())
       .then(jsonData => {
         setData(jsonData);

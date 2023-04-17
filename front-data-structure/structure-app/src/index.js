@@ -8,14 +8,17 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <BrowserRouter basename="/hello"> */}
+    <Router  basename={"/openai-learn/front-data-structure/structure-app/build"}>
       <App />
+    </Router>
+    {/* <BrowserRouter basename="/hello"> */}
+      {/* <App /> */}
     {/* </BrowserRouter>, */}
   </React.StrictMode>
 );
