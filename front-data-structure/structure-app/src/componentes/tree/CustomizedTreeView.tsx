@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 import { alpha, styled } from '@mui/material/styles';
 import TreeView from '@mui/lab/TreeView';
@@ -6,6 +7,10 @@ import TreeItem, { TreeItemProps, treeItemClasses } from '@mui/lab/TreeItem';
 import Collapse from '@mui/material/Collapse';
 import { useSpring, animated } from '@react-spring/web';
 import { TransitionProps } from '@mui/material/transitions';
+
+import CustomizedTreeRow from './CustomizedTreeRow.tsx';
+
+
 
 
 // --------------------------------------------
@@ -160,7 +165,30 @@ const StyledTreeItem = styled((props: TreeItemProps) => (
   },
 }));
 
-export default function CustomizedTreeView() {
+const  TreeItemRecursive = (props) => {
+  
+  return(
+  <StyledTreeItem  nodeId={props?.nombre_corto} 
+    label=<CustomizedTreeRow 
+        nombre_corto={props.nombre_corto} 
+        marcar_como_columna={props.marcar_como_columna} 
+        cantidad_subdivisiones={props.cantidad_subdivisiones}
+        nombre_columna={props?.nombre_columna}
+        isCat ={props?.is_cat}
+        preview ={props?.preview}
+        nombre_antiguo={props.nombre}
+        setPopupClose={props.setPopupClose} setPopupData={props.setPopupData}
+    /> 
+    >
+  {props?.subdivisiones ? props?.subdivisiones.map((item, index) => (
+    <TreeItemRecursive key={index} {...item}
+    setPopupClose={props.setPopupClose} setPopupData={props.setPopupData}
+    ></TreeItemRecursive>
+  )): null}
+  </StyledTreeItem>)
+}
+
+export default function CustomizedTreeView(props) {
   return (
     <TreeView
       aria-label="customized"
@@ -168,22 +196,28 @@ export default function CustomizedTreeView() {
       defaultCollapseIcon={<MinusSquare />}
       defaultExpandIcon={<PlusSquare />}
       defaultEndIcon={<CloseSquare />}
-      sx={{ height: "100vw", flexGrow: 1, maxWidth: "100vw", overflowY: 'auto' }}
+      sx={{ height: "100vh", flexGrow: 1, maxWidth: "90%", overflowY: 'auto'}}
     >
-      <StyledTreeItem nodeId="1" label="Main">
+      {props?.data.map((item, index) => (
+
+        <TreeItemRecursive key={index} {...item} setPopupClose={props.setPopupClose} setPopupData={props.setPopupData}></TreeItemRecursive>
+
+      ))}
+{/*       
+      <StyledTreeItem nodeId="1" label=<CustomizedTreeRow />>
         <StyledTreeItem nodeId="2" label="Hello" />
         <StyledTreeItem nodeId="3" label="Subtree with children">
           <StyledTreeItem nodeId="6" label="Hello" />
           <StyledTreeItem nodeId="7" label="Sub-subtree with children">
             <StyledTreeItem nodeId="9" label="Child 1" />
             <StyledTreeItem nodeId="10" label="Child 2" />
-            <StyledTreeItem nodeId="11" label=<div>hello  this is a button <button onClick={()=>console.log("clicked")}>press</button></div> />
+            <StyledTreeItem nodeId="11" label=<div style={{textAlign:"left"}}>hello  this is a button <button onClick={()=>console.log("clicked")}>press</button></div> />
           </StyledTreeItem>
           <StyledTreeItem nodeId="8" label="Hello" />
         </StyledTreeItem>
         <StyledTreeItem nodeId="4" label="World" />
         <StyledTreeItem nodeId="5" label="Something something" />
-      </StyledTreeItem>
+      </StyledTreeItem> */}
     </TreeView>
   );
 }
