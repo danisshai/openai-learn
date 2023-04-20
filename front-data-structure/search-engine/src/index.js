@@ -9,7 +9,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    {/* "homepage": "https://danisshai.github.io/openai-learn/front-data-structure/search-engine/build",  */}
     <Router  basename={"/openai-learn/front-data-structure/search-engine/build"}>
+    {/* <Router  basename={""}> */}
       <App />
     </Router>
   </React.StrictMode>

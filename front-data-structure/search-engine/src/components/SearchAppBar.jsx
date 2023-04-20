@@ -7,18 +7,25 @@ import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import Chip from '@mui/material/Chip';
 
-export default function SearchAppBar() {
+
+export default function SearchAppBar(props) {
   const [texto, setTexto] = useState("");
   const navigate = useNavigate();
 
   const search = ()=>{
     // navigate.push('/mi-pagina?param1=nuevo-valor');
-    navigate(`?texto=${texto}`, { replace: true })
+    if(props.busquedaExtendida){
+      navigate(`?busquedaExtendida=true&texto=${texto}`, { replace: true })
+    }else{
+      navigate(`?texto=${texto}`, { replace: true })
+    }
+    
     window.location.reload();
     // console.log(texto)
   }
 
   const goArbol = () => {
+    
     window.open("https://danisshai.github.io/openai-learn/front-data-structure/structure-app/build/", '_blank');
   };
   return (
