@@ -197,7 +197,7 @@ export default function CustomizedTreeView(props) {
       defaultCollapseIcon={<MinusSquare />}
       defaultExpandIcon={<PlusSquare />}
       defaultEndIcon={<CloseSquare />}
-      sx={{ height: "100vh", flexGrow: 1, maxWidth: "99%", overflowY: 'auto'}}
+      sx={{ height: "90vh", flexGrow: 1, maxWidth: "99%", overflowY: 'auto'}}
     >
       {props?.data.map((item, index) => (
 

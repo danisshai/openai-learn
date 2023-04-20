@@ -10,6 +10,7 @@ import CustomizedTreeView from "./componentes/tree/CustomizedTreeView.tsx"
 import MyComponent from './componentes/MyComponent.jsx';
 import Cookies from 'js-cookie';
 import PopUp from "./componentes/PopUp.jsx"
+import SearchAppBar from "./componentes/SearchAppBar.jsx"
 // import GmailTreeView from "./componentes/tree/GmailTreeView.tsx"
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
 
     // Descarga los datos y los guarda en cookies que quedan guardadas por 1 dia
     // si fetchAlways = true siempre descarga los datos
-    const fetchAlways = true
+    const fetchAlways = false
     if (fetchAlways) {
       fetch('data.json')
       .then(response => response.json())
@@ -55,6 +56,7 @@ function App() {
   return (
     
     <div className="App" style={{width:"100vw"}}>
+      <SearchAppBar />
       <CustomizedTreeView data={data} setPopupClose={setPopupClose} setPopupData={setPopupData}/>
       {/* <MyComponent /> */}
       {popupClose ? null:

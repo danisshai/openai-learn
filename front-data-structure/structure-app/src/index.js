@@ -10,11 +10,13 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-
+ 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <Router  basename={"/"}> */}
+    {/* "homepage": "https://danisshai.github.io/openai-learn/front-data-structure/structure-app/build",  */}
+
     {/* AÑADIR A PACKAGE.JSON "homepage": "https://danisshai.github.io/openai-learn/front-data-structure/structure-app/build", */}
     <Router  basename={"/openai-learn/front-data-structure/structure-app/build"}>
       <App />
